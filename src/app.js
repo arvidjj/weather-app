@@ -1,9 +1,14 @@
 //import './input.css';
 import { html, render } from 'lit';
 import './style.css';
+import './input.css';
 
 const input = document.querySelector("#locationInput");
 const renderWeatherHere = document.querySelector("#renderWeather")
+
+document.querySelector("#mainForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+});
 
 input.addEventListener("input", (e) => {
     fetchWeatherData(e.target.value);
