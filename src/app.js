@@ -151,8 +151,8 @@ const renderWeather = (current, forecast) => {
 
 async function fetchWeatherData(location) {
     try {
-        const currentUrl = `http://api.weatherapi.com/v1/current.json?key=5b9ab160015f4d91b5d231913231905&q=${location}&aqi=no`;
-        const forecastUrl = `http://api.weatherapi.com/v1/forecast.json?key=5b9ab160015f4d91b5d231913231905&q=${location}&days=3`;
+        const currentUrl = `https://api.weatherapi.com/v1/current.json?key=5b9ab160015f4d91b5d231913231905&q=${location}&aqi=no`;
+        const forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=5b9ab160015f4d91b5d231913231905&q=${location}&days=3`;
 
         const [currentResponse, forecastResponse] = await Promise.all([
             fetch(currentUrl),
@@ -175,4 +175,4 @@ async function fetchWeatherData(location) {
 }
 
 
-fetchWeatherData("Ciudad Del Este");
+fetchWeatherData("New York");
