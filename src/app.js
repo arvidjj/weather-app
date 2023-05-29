@@ -19,10 +19,19 @@ const renderWeather = (data) => {
     const component = html`
     <div class="flex align-middle items-center content-center flex-col m-10">
         <p class="text-4xl" id="">${data.location.name}</p>
-        <p class="text-5xl">${data.current.temp_c}°C</p>
+        <p class="text-8xl">${data.current.temp_c}°C</p>
+
+        <div class="flex flex-row items-center relative right-2">
+            <img src="${data.current.condition.icon}" alt="Condition" class="">
+            <p class="text-2xl">${data.current.condition.text}</p>
+            
+        </div>
+        <div>
+            <p class="text-l" id="">Feels Like: ${data.current.feelslike_c}°C</p>
+        </div>
     </div>
     `;
-    render(component, renderWeatherHere );
+    render(component, renderWeatherHere);
 }
 
 async function fetchWeatherData(location) {
@@ -40,4 +49,4 @@ async function fetchWeatherData(location) {
     }
 }
 
-fetchWeatherData("London");
+fetchWeatherData("Ciudad Del Este");
