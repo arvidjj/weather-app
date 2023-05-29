@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "lit": "^2.7.4"
+    "lit": "^2.7.4",
+    "moment": "^2.29.4",
+    "opencage-api-client": "^1.0.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.1"
   },
   "name": "weather-app",
   "version": "1.0.0",
@@ -17,6 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
     "postcss": "^8.4.23",
     "postcss-loader": "^7.3.2",

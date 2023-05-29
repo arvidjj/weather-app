@@ -1,10 +1,72 @@
 $background: rgb(2, 0, 14);
+$light-background: rgb(2, 0, 14);
 $text: white;
 
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: $background;
     color: $text;
+    background-image: url("./img/daytime.jpg");
+    /* Relative path to daytime image */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.night {
+        background-image: url("./img/olena-sergienko.jpg");
+        /* Relative path to olena-sergienko image */
+    }
+
 }
+
+.forecast-day {
+    width: 50%;
+    background-color: hsl(0, 0%, 21%);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    >div {
+        padding: 10px;
+    }
+}
+
+.forecast-day::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust the width as desired */
+    background-color: darkblue;
+    /* Set the background color of the scrollbar */
+}
+
+.forecast-day::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 83);
+    /* Set the color of the scrollbar thumb */
+    border-radius: 4px;
+    /* Make the thumb rounded */
+}
+
+.forecast-day::-webkit-scrollbar-track {
+    background-color: rgb(58, 58, 58);
+    /* Set the color of the scrollbar track */
+}
+
+.forecast-day::-webkit-scrollbar-button {
+    display: none;
+    /* Hide the scrollbar buttons/arrows */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.loading {
+    opacity: 0.6;
+  }

@@ -11,6 +11,10 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+              },
         ],
     },
     devServer: {
@@ -26,11 +30,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Weather',
+            favicon: "./src/img/icon.png",
             template: './src/index.html', // Replace './src/index.html' with the path to your HTML file
         }),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'), // Replace 'dist' with your desired output directory
         filename: 'bundle.js',
+        clean: true,
     },
 };
