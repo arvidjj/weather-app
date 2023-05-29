@@ -1,9 +1,11 @@
 body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: white;
-  background-image: url("./img/daytime.jpg");
+  background: linear-gradient(to bottom, #1e528e 0%, #265889 50%, #9da671 100%);
+  min-height: 100vh; /* Set min-height to 100vh for full page coverage */
   /* Relative path to daytime image */
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,8 +15,12 @@ body.night {
   /* Relative path to olena-sergienko image */
 }
 
+.main-component {
+  background-color: hsl(0, 0%, 21%);
+}
+
 .forecast-day {
-  width: 50%;
+  width: 90vw;
   background-color: hsl(0, 0%, 21%);
   border: 1px solid transparent;
   border-radius: 10px;
@@ -25,6 +31,12 @@ body.night {
   padding: 10px;
 }
 
+@media (min-width: 768px) {
+  /* Apply styles for screens with a minimum width of 768px (tablet and larger) */
+  .forecast-day {
+    width: 50%; /* Set width to 50% on tablet and larger screens */
+  }
+}
 .forecast-day::-webkit-scrollbar {
   width: 8px;
   /* Adjust the width as desired */
@@ -62,4 +74,115 @@ body.night {
 
 .loading {
   opacity: 0.6;
+}
+
+@keyframes slide-transparency {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-opacity {
+  animation-name: slide-transparency;
+  animation-iteration-count: infinite;
+}
+
+.freq-5 {
+  animation-duration: 5s;
+}
+
+.freq-6 {
+  animation-duration: 6.33s;
+}
+
+.freq-7 {
+  animation-duration: 7s;
+}
+
+.freq-8 {
+  animation-duration: 8.88s;
+}
+
+.freq-9 {
+  animation-duration: 9s;
+}
+
+.freq-10 {
+  animation-duration: 10.17s;
+}
+
+.delay-2 {
+  animation-delay: 1.33s;
+}
+
+.delay-4 {
+  animation-delay: 2.11s;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: -1000;
+}
+
+.z-1,
+.z-2,
+.z-3 {
+  position: absolute;
+  width: 150vw;
+  height: 150vw;
+  left: -50vw;
+  top: -50vw;
+  transform-origin: center;
+}
+
+.tile {
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 512px 512px;
+}
+
+.top-left {
+  background-image: url("./img/topleft.png");
+}
+
+.top-right {
+  background-image: url("./img/topright.png");
+}
+
+.bottom-left {
+  background-image: url("./img/bottomleft.png");
+}
+
+.bottom-right {
+  background-image: url("./img/bottomright.png");
+}
+
+.isNotVisible {
+  display: none;
+}
+
+.sky {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: -1000;
 }/*# sourceMappingURL=style.css.map */
