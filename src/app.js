@@ -3,7 +3,7 @@ import { html, render } from 'lit';
 import './style.css';
 import './input.css';
 import moment from 'moment';
-import { geocode } from 'opencage-api-client';
+//import { geocode } from 'opencage-api-client';
 
 const renderWeatherHere = document.querySelector("#renderWeather")
 
@@ -52,7 +52,7 @@ if (currentHour >= 19 || currentHour < 5) {
     nightBG.classList.add('isNotVisible');
     bodyElement.classList.add('day');
 }
-
+/*
 if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -77,7 +77,7 @@ if ('geolocation' in navigator) {
 } else {
     console.log('Geolocation is not supported by this browser.');
 }
-
+*/
 
 const input = document.getElementById('locationInput');
 const mainForm = document.getElementById('mainForm');
